@@ -1,0 +1,146 @@
+name: 🐛 错误报告
+description: 报告一个错误以帮助我们改进
+title: "[BUG] "
+labels: ["bug", "需要分类"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您花时间填写错误报告！请提供尽可能详细的信息以帮助我们快速定位和解决问题。
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 错误描述
+      description: 清楚简洁地描述这个错误是什么
+      placeholder: 描述您遇到的问题...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: 重现步骤
+      description: 重现此行为的步骤
+      placeholder: |
+        1. 访问 '...'
+        2. 点击 '....'
+        3. 滚动到 '....'
+        4. 看到错误
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 预期行为
+      description: 清楚简洁地描述您期望发生什么
+      placeholder: 描述您期望的正确行为...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 受影响的平台
+      description: 选择出现问题的平台
+      options:
+        - GitHub
+        - GitLab
+        - Hugging Face
+        - npm
+        - PyPI
+        - conda
+        - 其他
+      multiple: true
+    validations:
+      required: true
+
+  - type: input
+    id: url-example
+    attributes:
+      label: 问题 URL 示例
+      description: 提供出现问题的具体 URL
+      placeholder: https://xget.xi-xu.me/gh/...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: operation-type
+    attributes:
+      label: 操作类型
+      description: 选择您执行的操作类型
+      options:
+        - 文件下载
+        - Git 克隆
+        - Git 推送
+        - Git 拉取
+        - 包管理器使用
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-message
+    attributes:
+      label: 错误信息
+      description: 如果有错误信息，请粘贴在这里
+      render: shell
+      placeholder: 粘贴完整的错误信息...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: 浏览器/工具
+      description: 您使用的是什么浏览器或下载工具？
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - wget
+        - curl
+        - aria2
+        - git
+        - npm
+        - pip
+        - conda
+        - 其他
+      multiple: true
+    validations:
+      required: false
+
+  - type: input
+    id: instance-url
+    attributes:
+      label: 实例 URL
+      description: 您使用的 Xget 实例 URL
+      placeholder: https://xget.xi-xu.me 或您自己的实例
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 附加信息
+      description: 添加关于问题的任何其他信息
+      placeholder: 任何可能有助于解决问题的额外信息...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 确认
+      description: 在提交之前，请确认以下内容
+      options:
+        - label: 我已经搜索了现有的 issues，确认这不是重复报告
+          required: true
+        - label: 我已经阅读了存储库文档和故障排除指南
+          required: true
+        - label: 我提供的信息准确且完整
+          required: true

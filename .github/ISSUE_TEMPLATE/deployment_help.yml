@@ -1,0 +1,201 @@
+name: 🚀 部署帮助
+description: 获取部署相关的帮助
+title: "[DEPLOYMENT] "
+labels: ["deployment", "help wanted"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        需要部署帮助？我们来协助您成功部署 Xget 实例！
+
+  - type: dropdown
+    id: deployment-type
+    attributes:
+      label: 部署类型
+      description: 您想要进行哪种类型的部署？
+      options:
+        - Cloudflare Workers (推荐)
+        - 自定义域名绑定
+        - 企业内部部署
+        - 开发环境搭建
+        - 其他平台部署
+    validations:
+      required: true
+
+  - type: dropdown
+    id: experience-level
+    attributes:
+      label: 技术经验水平
+      description: 您的技术背景如何？
+      options:
+        - 初学者 - 刚开始学习
+        - 中级 - 有一些经验
+        - 高级 - 经验丰富
+        - 专家 - 非常熟练
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-issue
+    attributes:
+      label: 当前遇到的问题
+      description: 详细描述您在部署过程中遇到的具体问题
+      placeholder: 描述您遇到的具体问题、错误信息或困惑...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-taken
+    attributes:
+      label: 已尝试的步骤
+      description: 列出您已经尝试过的步骤
+      placeholder: |
+        1. 我已经...
+        2. 然后我尝试了...
+        3. 接着我...
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-messages
+    attributes:
+      label: 错误信息
+      description: 如果有错误信息，请完整粘贴
+      render: shell
+      placeholder: 粘贴完整的错误信息...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: 操作系统
+      description: 您使用的操作系统
+      options:
+        - Windows
+        - macOS
+        - Linux (Ubuntu/Debian)
+        - Linux (CentOS/RHEL)
+        - Linux (其他发行版)
+        - 其他
+    validations:
+      required: false
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js 版本
+      description: 您的 Node.js 版本（如果相关）
+      placeholder: 例如：v18.17.0
+    validations:
+      required: false
+
+  - type: input
+    id: npm-version
+    attributes:
+      label: npm 版本
+      description: 您的 npm 版本（如果相关）
+      placeholder: 例如：9.6.7
+    validations:
+      required: false
+
+  - type: dropdown
+    id: cloudflare-account
+    attributes:
+      label: Cloudflare 账户状态
+      description: 您的 Cloudflare 账户状态（如果使用 Cloudflare Workers）
+      options:
+        - 还没有账户
+        - 有免费账户
+        - 有付费账户
+        - 不确定
+        - 不使用 Cloudflare
+    validations:
+      required: false
+
+  - type: textarea
+    id: custom-requirements
+    attributes:
+      label: 自定义需求
+      description: 您是否有特殊的部署需求或配置要求？
+      placeholder: |
+        例如：
+        - 需要自定义域名
+        - 需要特定的缓存策略
+        - 需要企业级安全配置
+        - 需要集成现有系统
+    validations:
+      required: false
+
+  - type: input
+    id: target-domain
+    attributes:
+      label: 目标域名
+      description: 如果您计划使用自定义域名，请提供
+      placeholder: 例如：xget.example.com
+    validations:
+      required: false
+
+  - type: dropdown
+    id: expected-usage
+    attributes:
+      label: 预期使用量
+      description: 您预期的使用量级别
+      options:
+        - 个人使用 - 偶尔使用
+        - 小团队 - 日常使用
+        - 中型团队 - 频繁使用
+        - 大型组织 - 高频使用
+        - 公共服务 - 大量用户
+    validations:
+      required: false
+
+  - type: textarea
+    id: configuration-questions
+    attributes:
+      label: 配置相关问题
+      description: 关于配置的具体问题
+      placeholder: |
+        例如：
+        - 如何修改缓存时间？
+        - 如何添加新平台支持？
+        - 如何配置安全策略？
+    validations:
+      required: false
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: 紧急程度
+      description: 您需要帮助的紧急程度
+      options:
+        - 低 - 有时间慢慢解决
+        - 中 - 希望尽快解决
+        - 高 - 比较急需
+        - 紧急 - 阻碍工作进展
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 附加信息
+      description: 任何其他可能有助于提供帮助的信息
+      placeholder: 其他相关信息、截图、配置文件内容等...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 确认
+      description: 在提交之前，请确认以下内容
+      options:
+        - label: 我已经阅读了存储库的 README 和部署文档
+          required: true
+        - label: 我已经搜索了现有的 issues 寻找类似问题
+          required: true
+        - label: 我提供的信息准确且完整
+          required: true

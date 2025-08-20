@@ -1,0 +1,37 @@
+{
+	"dependencies": {
+		"express": "^4.19.2",
+		"xget": "file:"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "^0.8.36",
+		"@cloudflare/workers-types": "^4.20250724.0",
+		"eslint": "^9.31.0",
+		"prettier": "^3.6.2",
+		"vitest": "^3.1.4",
+		"wrangler": "^4.26.0"
+	},
+	"name": "xxget",
+	"private": false,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"deploy:vercel": "vercel --prod",
+		"dev": "wrangler dev",
+		"dev:vercel": "vercel dev",
+		"format": "prettier --write src/ test/ *.js *.json *.md",
+		"format:check": "prettier --check src/ test/ *.js *.json *.md",
+		"lint": "eslint src/ test/",
+		"lint:fix": "eslint src/ test/ --fix",
+		"preview:vercel": "vercel",
+		"start": "wrangler dev",
+		"start:vercel": "vercel dev",
+		"test": "vitest",
+		"test:coverage": "vitest run --coverage",
+		"test:run": "vitest run",
+		"test:ui": "vitest --ui",
+		"test:watch": "vitest --watch",
+		"type-check": "tsc --noEmit"
+	},
+	"type": "module",
+	"version": "1.0.0"
+}

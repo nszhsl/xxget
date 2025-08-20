@@ -1,0 +1,199 @@
+name: 🌐 平台支持请求
+description: 请求添加新平台支持
+title: "[PLATFORM] "
+labels: ["platform", "enhancement"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您提出新平台支持请求！我们致力于支持更多有价值的平台。
+
+  - type: input
+    id: platform-name
+    attributes:
+      label: 平台名称
+      description: 您希望支持的平台名称
+      placeholder: 例如：Bitbucket, SourceForge, Codeberg
+    validations:
+      required: true
+
+  - type: input
+    id: platform-url
+    attributes:
+      label: 平台 URL
+      description: 平台的主要 URL
+      placeholder: https://example.com
+    validations:
+      required: true
+
+  - type: textarea
+    id: platform-description
+    attributes:
+      label: 平台描述
+      description: 简要描述这个平台的用途和特点
+      placeholder: 这是一个用于...的平台，主要特点是...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform-type
+    attributes:
+      label: 平台类型
+      description: 选择平台的主要类型
+      options:
+        - 代码托管 (Git)
+        - 包管理器
+        - 模型/数据集托管
+        - 文件存储
+        - 容器镜像
+        - 文档托管
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: url-patterns
+    attributes:
+      label: URL 模式示例
+      description: 提供该平台的典型 URL 模式示例
+      placeholder: |
+        文件下载：https://example.com/user/repo/releases/download/v1.0/file.zip
+        Git 克隆：https://example.com/user/repo.git
+        API 访问：https://api.example.com/v1/...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: supported-operations
+    attributes:
+      label: 需要支持的操作
+      description: 选择需要支持的操作类型
+      options:
+        - 文件下载
+        - Git 克隆
+        - Git 推送
+        - API 访问
+        - 包下载
+        - 元数据获取
+        - 其他
+      multiple: true
+    validations:
+      required: true
+
+  - type: textarea
+    id: authentication
+    attributes:
+      label: 认证要求
+      description: 该平台是否需要特殊的认证方式？
+      placeholder: |
+        - 是否需要 API Token？
+        - 是否有公开访问的内容？
+        - 认证方式是什么？
+    validations:
+      required: false
+
+  - type: textarea
+    id: rate-limits
+    attributes:
+      label: 速率限制
+      description: 该平台是否有已知的速率限制或访问限制？
+      placeholder: 例如：每小时 1000 次请求，需要 User-Agent 等
+    validations:
+      required: false
+
+  - type: dropdown
+    id: popularity
+    attributes:
+      label: 平台流行度
+      description: 您认为这个平台的使用程度如何？
+      options:
+        - 非常流行 - 广泛使用
+        - 较为流行 - 有一定用户群体
+        - 小众但重要 - 特定领域重要
+        - 新兴平台 - 发展潜力大
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: 使用场景
+      description: 描述支持这个平台的主要使用场景和受益用户
+      placeholder: |
+        这个平台主要用于：
+        - 开发者需要...
+        - 企业用户使用它来...
+        - 学术研究中...
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-challenges
+    attributes:
+      label: 技术挑战
+      description: 您是否了解支持这个平台可能面临的技术挑战？
+      placeholder: |
+        可能的技术挑战：
+        - 特殊的 URL 结构
+        - 复杂的认证流程
+        - 特殊的请求头要求
+        - 其他技术限制
+    validations:
+      required: false
+
+  - type: input
+    id: similar-platforms
+    attributes:
+      label: 类似平台
+      description: 是否有已支持的类似平台可以参考？
+      placeholder: 例如：类似于 GitHub 的功能
+    validations:
+      required: false
+
+  - type: textarea
+    id: documentation
+    attributes:
+      label: 相关文档
+      description: 提供该平台的 API 文档或开发者文档 URL
+      placeholder: |
+        - API 文档：https://...
+        - 开发者指南：https://...
+        - 其他相关资源：https://...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority-level
+    attributes:
+      label: 优先级
+      description: 您认为这个平台支持的优先级如何？
+      options:
+        - 高 - 急需支持
+        - 中 - 希望尽快支持
+        - 低 - 有时间时支持
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: 附加信息
+      description: 任何其他有助于评估和实现平台支持的信息
+      placeholder: 其他相关信息...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 确认
+      description: 在提交之前，请确认以下内容
+      options:
+        - label: 我已经确认该平台提供公开可访问的内容
+          required: true
+        - label: 我了解该平台的使用条款和限制
+          required: true
+        - label: 我提供的信息准确且完整
+          required: true

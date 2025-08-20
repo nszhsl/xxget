@@ -1,0 +1,205 @@
+name: ⚡ 性能问题
+description: 报告性能相关的问题
+title: "[PERFORMANCE] "
+labels: ["performance", "需要分类"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢您报告性能问题！性能数据对我们优化服务非常重要。
+
+  - type: textarea
+    id: performance-issue
+    attributes:
+      label: 性能问题描述
+      description: 详细描述您遇到的性能问题
+      placeholder: 描述具体的性能问题，如下载速度慢、响应时间长等...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: 问题类型
+      description: 选择性能问题的类型
+      options:
+        - 下载速度慢
+        - 响应时间长
+        - 连接超时
+        - 频繁重试
+        - 缓存未命中
+        - Git 操作缓慢
+        - 其他
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-platform
+    attributes:
+      label: 受影响的平台
+      description: 选择出现性能问题的平台
+      options:
+        - GitHub
+        - GitLab
+        - Hugging Face
+        - npm
+        - PyPI
+        - conda
+        - 所有平台
+      multiple: true
+    validations:
+      required: true
+
+  - type: input
+    id: file-size
+    attributes:
+      label: 文件大小
+      description: 如果涉及文件下载，请提供文件大小
+      placeholder: 例如：100MB, 1.5GB
+    validations:
+      required: false
+
+  - type: input
+    id: download-speed
+    attributes:
+      label: 实际下载速度
+      description: 您观察到的下载速度
+      placeholder: 例如：500KB/s, 2MB/s
+    validations:
+      required: false
+
+  - type: input
+    id: expected-speed
+    attributes:
+      label: 期望下载速度
+      description: 您期望的下载速度或直接访问源站的速度
+      placeholder: 例如：10MB/s, 50MB/s
+    validations:
+      required: false
+
+  - type: textarea
+    id: performance-metrics
+    attributes:
+      label: 性能指标
+      description: 如果您有具体的性能数据，请提供（如响应头中的 X-Performance-Metrics）
+      render: json
+      placeholder: 粘贴性能指标数据...
+    validations:
+      required: false
+
+  - type: input
+    id: test-url
+    attributes:
+      label: 测试 URL
+      description: 提供出现性能问题的具体 URL
+      placeholder: https://xget.xi-xu.me/gh/...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: geographic-location
+    attributes:
+      label: 地理位置
+      description: 您的大致地理位置（有助于分析 CDN 性能）
+      options:
+        - 中国大陆
+        - 中国香港
+        - 中国台湾
+        - 日本
+        - 韩国
+        - 新加坡
+        - 美国西海岸
+        - 美国东海岸
+        - 欧洲
+        - 其他亚洲地区
+        - 其他地区
+    validations:
+      required: false
+
+  - type: dropdown
+    id: network-type
+    attributes:
+      label: 网络类型
+      description: 您使用的网络类型
+      options:
+        - 家庭宽带
+        - 企业网络
+        - 移动网络 (4G)
+        - 移动网络 (5G)
+        - 公共 WiFi
+        - VPN
+        - 其他
+    validations:
+      required: false
+
+  - type: input
+    id: bandwidth
+    attributes:
+      label: 网络带宽
+      description: 您的网络带宽
+      placeholder: 例如：100Mbps, 1Gbps
+    validations:
+      required: false
+
+  - type: dropdown
+    id: tool-used
+    attributes:
+      label: 使用的工具
+      description: 您使用什么工具进行下载或操作？
+      options:
+        - 浏览器下载
+        - wget
+        - curl
+        - aria2
+        - git
+        - npm
+        - pip
+        - conda
+        - 其他
+    validations:
+      required: false
+
+  - type: input
+    id: instance-url
+    attributes:
+      label: 实例 URL
+      description: 您使用的 Xget 实例
+      placeholder: https://xget.xi-xu.me 或您自己的实例
+    validations:
+      required: false
+
+  - type: textarea
+    id: comparison-test
+    attributes:
+      label: 对比测试
+      description: 如果您进行了对比测试（如直接访问源站），请提供结果
+      placeholder: |
+        直接访问源站速度：...
+        通过 Xget 访问速度：...
+        测试时间：...
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 附加信息
+      description: 任何其他可能有助于诊断性能问题的信息
+      placeholder: 其他相关信息...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 确认
+      description: 在提交之前，请确认以下内容
+      options:
+        - label: 我已经尝试了多次测试以确认问题的一致性
+          required: true
+        - label: 我已经检查了网络连接和本地环境
+          required: true
+        - label: 我提供的性能数据准确可靠
+          required: true

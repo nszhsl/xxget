@@ -1,0 +1,24 @@
+{
+  "functions": {
+    "api/[...path].js": {
+      "runtime": "edge"
+    }
+  },
+  "headers": [
+    {
+      "headers": [
+        {
+          "key": "X-Powered-By",
+          "value": "Xget on Vercel"
+        }
+      ],
+      "source": "/(.*)"
+    }
+  ],
+  "rewrites": [
+    {
+      "destination": "/api/$1",
+      "source": "/(.*)"
+    }
+  ]
+}
